@@ -1,0 +1,28 @@
+<div class="wrapper">
+    
+    <ul>
+        <!-- [routerLinkActiveOptions]="{exact: true}" para que el style se aplique cuando la ruta es exactamente
+        esa, funciona al estilo de "pathMatch: 'full'" definido en app-routing.module.ts -->
+        <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <p class="icon-text">Home</p>
+            <fa-icon [icon]="faHouse" class="fa-2x"></fa-icon>
+        </li>
+        <li routerLink="comunicacion" routerLinkActive="active">
+            <p class="icon-text">Comunicación</p>
+            <fa-icon [icon]="faTowerBroadcast" class="fa-2x"></fa-icon>
+        </li>
+        <li routerLink="switch" routerLinkActive="active">
+            <p class="icon-text">Switch</p>
+            <fa-icon [icon]="faLightbulb" class="fa-2x"></fa-icon>
+        </li>
+        <li routerLink="crud" routerLinkActive="active">
+            <p class="icon-text">Crud</p>
+            <!-- <fa-icon [icon]="faFileCirclePlus"></fa-icon> -->
+            <fa-icon [icon]="faBookOpen" class="fa-2x"></fa-icon>
+        </li>
+        <li routerLink="libreria" routerLinkActive="active">
+            <p class="icon-text">Libreria</p>
+            <fa-icon [icon]="faChartLine" class="fa-2x"></fa-icon>
+        </li>
+    </ul>
+</div>

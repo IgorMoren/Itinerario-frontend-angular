@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+/* Add font for all the document */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap')
+
+/* Color variables */
+
+$appbackgroundColor: rgb(240, 240, 240)
+$backgroundHeader: rgb(33, 50, 94)
+$backgroundBlue: rgb(62, 73, 122)
+$yellow: rgb(241, 208, 10)
+
+*
+    margin: 0
+    padding: 0
+
+body
+    background-color: $backgroundBlue
+    font-family: 'Roboto', sans-serif
+
+.wrapper
+    width: 100%
+    margin: auto
+    display: flex
+    justify-content: center
+
+    ul
+        list-style: none
+
+        li
+            display: flex
+            background: $backgroundHeader
+            color: white
+            border: 1px solid $backgroundHeader
+            border-radius: 10px
+            width: 170px
+            height: 50px
+            line-height: 50px
+            float: left
+            font-weight: 700
+            position: relative
+            cursor: pointer
+            /* Utilizo vw (en vez de vh) como uds para el margin top-bottom para que la separacion se mantenga de manera lineal en funcion del width */
+            margin: 1.5vw 0.5vw 1.5vw
+            justify-content: center
+            box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5)
+
+        li:hover
+            transition: 0.5s
+            background: $appbackgroundColor
+            color: $backgroundHeader
+
+.app-container
+    background-color: $appbackgroundColor
+    margin: 5% 10%
+    height: 60vh
+    border-radius: 10px
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5)
+
+.parent
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-size: 1.5em
+
+.child
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 30vh
+    width: 75vw
+    border: 1px solid black
+    margin-top: 5%
+    justify-content: center
+
+.btn-container
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    width: 80%
+    justify-content: center
+    padding-top: 50px
+
+.btn-comunication
+    // display: block
+    background-color: $yellow
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5)
+    border: none
+    margin: 0 20px
+    width: 120px
+    height: 50px
+    border-top: 4px solid $backgroundHeader
+    border-radius: 40px 0px 40px 0px
+    font-size: .8em
+    cursor: pointer
+
+    &:hover
+        transition: 0.5s
+        background: $backgroundHeader
+        color: $appbackgroundColor
+        border-bottom: 4px solid $yellow

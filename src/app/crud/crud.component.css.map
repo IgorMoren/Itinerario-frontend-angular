@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "crud.component.sass"
+    ],
+    "names": [],
+    "file": "crud.component.css"
+}
