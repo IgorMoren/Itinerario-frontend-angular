@@ -1,19 +1,22 @@
-<div class="parent">
+<div class="parent animate__animated animate__fadeIn">
     <h1>Parent</h1>
 
     <p>Mensaje: {{ txt }} </p>
 
     <div class="btn-container">
 
-        <button class="btn-comunication" (click)="sendToChild()">Service</button>
+        <button class="btn-comunication" (click)="sendToChildService()">Service</button>
         <button class="btn-comunication" (click)="showInput()">Input</button>
-        <button class="btn-comunication">Observable</button>
-
+        <button class="btn-comunication" >Observable</button>
+        <!-- <button class="btn-comunication" (click)="sendObservableToChild()">Observable</button>-->
     </div>
 
     <app-comunicacion-hijo 
     [txt]="txtInput"
-    (textoOutput)="showOutput($event)"
+    (textoOutput)="showOutput($event)"    
     ></app-comunicacion-hijo>
 
+
+    <!-- [observableFromParent$]="observableToChild.asObservable()"
+    (observableOutputToParent)="receiveObservableFromChild($event)" -->
 </div>

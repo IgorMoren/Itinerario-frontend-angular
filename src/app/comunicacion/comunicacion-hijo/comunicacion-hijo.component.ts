@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { ComunicacionService } from '../comunicacion.service';
 
 
@@ -8,34 +9,52 @@ import { ComunicacionService } from '../comunicacion.service';
   styleUrls: ['./comunicacion-hijo.component.sass']
 })
 export class ComunicacionHijoComponent implements OnInit {
-  
+  outputToParent!: string;
+  observableToParent = new Subject();
 
   /* Comunication Input-Output */
-  @Input() txt: string = '';
+  @Input()
+  txt: string = '';
 
   @Output()
   textoOutput: EventEmitter<string> = new EventEmitter<string>();
 
-  showOutput(value: string) {
-    this.textoOutput.emit(value);
+  showOutput() {
+    this.textoOutput.emit(this.outputToParent = 'Child using output');
   }
   /* End Input-Output */
 
-  /* Through services */
-  constructor(private comunicacionService: ComunicacionService) { }
+
+  constructor(private _comunicacionService: ComunicacionService) { }
 
   ngOnInit(): void {
-    this.comunicacionService.parentMsg$
+
+    /* Through services */
+    this._comunicacionService.getServiceChildMessage()
       .subscribe(
-        msg => {
+        (msg: string) => {
           this.txt = msg;
         }
-      )
+      );
+    /* this.observableFromParent$.subscribe((msg: any) => {
+      this.txt = msg;
+    }) */
   }
-  sendToParent() {
-    this.comunicacionService.sendChildMsg('Child using service');
+  sendToParentService() {
+    this._comunicacionService.setServiceParentMessage('Child using service');
   }
+  /* End through services */
 
-  /* En through services */
+  //Receive observable 
+  /* @Input()
+  observableFromParent$ = new Observable(); */
 
+  //  Observable to parent
+ /*  @Output()
+  observableOutputToParent: EventEmitter<any> = new EventEmitter<any>();
+
+  sendObservableToParent() {
+    this.observableToParent.next('Child using observable');
+    this.observableOutputToParent.emit(this.observableToParent);
+  } */
 }

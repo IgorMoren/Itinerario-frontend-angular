@@ -1,0 +1,11 @@
+----------------routerLinkActive-------------
+
+Si pongo el routerlinkactive en el style.sass no me carga ese estilo al routerlinkactive=
+
+------------------Styles.sass----------------
+
+Como importar las variables creadas en style.sass a las hojas de estilo de los componentes
+
+----------------CSS General------------------
+
+-webkit y -moz?¿?

@@ -1,1 +1,37 @@
-<p>switch works!</p>
+<div class="container animate__animated animate__fadeIn">
+    <div class="lighter">
+        <div class="lighter-border">
+            <div class="inner-lighter">
+                <div class="red-light-off light circle blur" [ngClass]="{'red-light-on': colorRed == true,
+                            'red-light-off': colorRed == false}">
+                </div>
+                <div class="yellow-light-off light circle blur" [ngClass]="{'yellow-light-on': colorYellow == true,
+                            'yellow-light-off': colorYellow == false}">
+                </div>
+                <div class="green-light-off light circle blur" [ngClass]="{'green-light-on': colorGreen == true,
+                            'green-light-off': colorGreen == false}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TODO Lighter opacity switch with slider bar -->
+
+    <div class="controller">
+
+        <button class="btn" [ngClass]="{'off-btn': onOffController == false,
+                            'on-btn': onOffController == true}" (click)="setButtonColor()">{{ onOff }}
+
+
+        </button>
+
+        <label for="light">Controller</label>
+        <select name="light" id="light" (change)="showColor($event)" [disabled]="!onOffController">
+            <option>Choose</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+        </select>
+    </div>
+
+</div>

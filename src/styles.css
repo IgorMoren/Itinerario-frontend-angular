@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* Add font for all the document */
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&family=Roboto:wght@400;700&display=swap");
 /* Color variables */
 * {
   margin: 0;
@@ -10,6 +10,21 @@
 body {
   background-color: #3e497a;
   font-family: 'Roboto', sans-serif;
+}
+
+.brand-name {
+  position: block;
+}
+
+.brand-name h3 {
+  position: absolute;
+  font-family: 'Roboto Slab', serif;
+  display: inline;
+  font-size: 2em;
+  margin: 22px 0 0 22px;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 20px black;
 }
 
 .wrapper {
@@ -138,5 +153,11 @@ body {
   background: #21325e;
   color: #f0f0f0;
   border-bottom: 4px solid #f1d00a;
+}
+
+@media (max-width: 1350px) {
+  .brand-name > h3 {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

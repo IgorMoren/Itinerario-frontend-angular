@@ -1,1 +1,173 @@
-/* No CSS *//*# sourceMappingURL=switch.component.css.map */
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  font-size: 2em;
+}
+
+.controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid black;
+}
+
+.controller .btn {
+  cursor: pointer;
+  font-size: 0.7em;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 7vh;
+  border-radius: 50%;
+}
+
+.controller .off-btn {
+  background: #ed4d45;
+  -webkit-box-shadow: inset 0px 0px 50px 5px rgba(0, 0, 0, 0), 0px 0px 4px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 50px 5px rgba(0, 0, 0, 0), 0px 0px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controller .on-btn {
+  background: #66ed40;
+  -webkit-box-shadow: 0px 0px 50px 5px #04f51880, 0px 0px 4px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 50px 5px #04f51880, 0px 0px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controller .off-btn:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controller .on-btn:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0px 3px 50px 5px #04f51880;
+          box-shadow: 0px 3px 50px 5px #04f51880;
+  -webkit-box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controller .btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.controller select {
+  font-size: 0.7em;
+}
+
+/* Traffic-lighter */
+.lighter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lighter .lighter-border {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: grey;
+  height: 400px;
+  width: 180px;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lighter .lighter-border .inner-lighter {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  background: black;
+  height: 95%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.lighter .lighter-border .inner-lighter .light {
+  margin-top: 8px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border: 5px solid grey;
+}
+
+.lighter .lighter-border .inner-lighter .red-light-off {
+  opacity: 0.3;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #ff0000 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.lighter .lighter-border .inner-lighter .red-light-on {
+  opacity: 1;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #ff0000 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(255, 0, 0, 0.78);
+          box-shadow: 0px 0px 50px 10px rgba(255, 0, 0, 0.78);
+}
+
+.lighter .lighter-border .inner-lighter .yellow-light-off {
+  opacity: 0.3;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #fbff00 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.lighter .lighter-border .inner-lighter .yellow-light-on {
+  opacity: 1;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #fbff00 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(253, 255, 0, 0.78);
+          box-shadow: 0px 0px 50px 10px rgba(253, 255, 0, 0.78);
+}
+
+.lighter .lighter-border .inner-lighter .green-light-off {
+  opacity: 0.3;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #1eff00 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.lighter .lighter-border .inner-lighter .green-light-on {
+  opacity: 1;
+  background-image: linear-gradient(#000000 2px, transparent 2px), linear-gradient(90deg, #000000 2px, transparent 2px), linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, #1eff00 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(8, 255, 1, 0.78);
+          box-shadow: 0px 0px 50px 10px rgba(8, 255, 1, 0.78);
+}
+/*# sourceMappingURL=switch.component.css.map */

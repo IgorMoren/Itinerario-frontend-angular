@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faHouse, faTowerBroadcast, faLightbulb, faFileCirclePlus, faBookOpen, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faTowerBroadcast, faLightbulb, faFileCirclePlus, faBookOpen, faChartLine  } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -16,4 +16,5 @@ export class NavbarComponent  {
   faFileCirclePlus = faFileCirclePlus;
   faBookOpen = faBookOpen;
   faChartLine = faChartLine;
+  
 }

@@ -1,34 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComunicacionService {
 
-  
-  /* Como convenio uso de las variables privadas con _variable */
-  
-  private _parentMsgSource = new Subject<string>();
-  
-  private _childMsgSource = new Subject<string>();
-  
-  parentMsg$ = this._parentMsgSource.asObservable();
 
-  childMsg$ = this._childMsgSource.asObservable();
+  /* Como convenio uso de las variables privadas con _variable */
+
+  private _parentMsgSource = new BehaviorSubject('');
+
+  private _childMsgSource = new BehaviorSubject('');
 
   constructor() { }
 
-  sendParentMsg( msg:string ){
-
-    this._parentMsgSource.next(msg);
-
+  getServiceParentMessage() {
+    return this._parentMsgSource;
   }
-  
-  sendChildMsg( msg:string ){
 
-    this._childMsgSource.next(msg);
-
+  setServiceParentMessage(value: string) {
+    this._parentMsgSource.next(value);
   }
-  
+
+  getServiceChildMessage() {
+    return this._childMsgSource;
+  }
+
+  setServiceChildMessage(value: string) {
+    this._childMsgSource.next(value);
+  }
+
+
 }
