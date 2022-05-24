@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LibreriaService } from './services/libreria.service';
+
 
 @Component({
   selector: 'app-libreria',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibreriaComponent implements OnInit {
 
-  constructor() { }
+  constructor( private libreriaService: LibreriaService  ) { }
 
   ngOnInit(): void {
+    this.libreriaService.peticionHttp();
   }
+
+    
 
 }
