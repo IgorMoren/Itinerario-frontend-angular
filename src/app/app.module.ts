@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { CrudComponent } from './crud/crud.component';
@@ -29,6 +30,7 @@ import { ComunicacionHijoComponent } from './comunicacion/comunicacion-hijo/comu
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

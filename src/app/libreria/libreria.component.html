@@ -1,1 +1,22 @@
-<p>libreria works!</p>
+<div class="libreria-container animate__animated animate__fadeIn">
+  <div class="select-input">
+    <select name="heroes" (change)="pintaGrafico($event)">
+      <option (value)="(item)" style = "font-family:Roboto"
+        *ngFor="let item of heroList">
+        {{ item }}
+      </option>
+    </select>
+  </div>
+  <div class="hero-img">
+    <img src="{{ this.heroImgString }}" alt="{{ this.heroName }}" class="animate__animated animate__fadeIn"/>
+  </div>
+  <div class="canvas-container">
+    <canvas
+      baseChart
+      [data]="radarChartData"
+      [options]="radarChartOptions"
+      [type]="radarChartType"
+    >
+    </canvas>
+  </div>
+</div>
