@@ -12,17 +12,17 @@ import { ChartConfiguration, ChartData, ChartType, LinearScale, LogarithmicScale
 export class LibreriaComponent implements OnInit {
 
   /*Start chart values*/
-  heroName: Heroes['name'] = 'Heroe';
+  heroName: Heroes['name'] = '';
 
-  heroThwart: Heroes['thwart'] = 5;
+  heroThwart: Heroes['thwart'] = 0;
 
-  heroAttack: Heroes["attack"] = 5;
+  heroAttack: Heroes["attack"] = 0;
 
-  heroDef: Heroes['defense'] = 5;
+  heroDef: Heroes['defense'] = 0;
 
-  heroHand: Heroes['hand_size'] = 5;
+  heroHand: Heroes['hand_size'] = 0;
 
-  heroHp: Heroes['health'] = 5;
+  heroHp: Heroes['health'] = 0;
  /* End chart values  */
 
  /* Array of heroes from marvelc cdb api */
@@ -143,7 +143,9 @@ code de la peticion Http */
         this.pointBackgroundColor = heroes['meta']['colors']['2'];
 
         this.heroImgString = `https://marvelcdb.com${heroes['imagesrc']}`;
-        console.log( 'imagen', this.heroImgString);
+        //console.log( 'imagen', this.heroImgString);
+        
+        
         
 
         this.radarChartData = {

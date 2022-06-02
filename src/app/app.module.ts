@@ -1,18 +1,18 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { ComunicacionHijoComponent } from './comunicacion/comunicacion-hijo/comunicacion-hijo.component';
 import { CrudComponent } from './crud/crud.component';
 import { ComunicacionComponent } from './comunicacion/comunicacion.component';
-import { SwitchComponent } from './switch/switch.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { HomeComponent } from './home/home.component';
 import { LibreriaComponent } from './libreria/libreria.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { ComunicacionHijoComponent } from './comunicacion/comunicacion-hijo/comunicacion-hijo.component';
+import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
   declarations: [

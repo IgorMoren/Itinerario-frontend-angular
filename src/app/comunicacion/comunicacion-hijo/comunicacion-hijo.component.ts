@@ -46,15 +46,15 @@ export class ComunicacionHijoComponent implements OnInit {
   /* End through services */
 
   //Receive observable 
-  /* @Input()
-  observableFromParent$ = new Observable(); */
+  @Input()
+  observableFromParent$ = new Observable();
 
   //  Observable to parent
- /*  @Output()
+  @Output()
   observableOutputToParent: EventEmitter<any> = new EventEmitter<any>();
 
   sendObservableToParent() {
     this.observableToParent.next('Child using observable');
     this.observableOutputToParent.emit(this.observableToParent);
-  } */
+  }
 }

@@ -40,10 +40,10 @@ export class ComunicacionComponent implements OnInit {
         }
       )
     /* Through observable*/
-    /* this.observableFromChild$.subscribe((msg: any) => {
+    this.observableFromChild$.subscribe((msg: any) => {
       this.observableFromChild = msg;
     }
-    ) */
+    )
   }
   sendToChildService() {
     this.comunicacionService.setServiceChildMessage('Parent using service');
@@ -54,20 +54,20 @@ export class ComunicacionComponent implements OnInit {
   /* Through observable */
 
   /* Receive observable */
- /*  @Input()
-  observableFromChild$ = new Observable; */
+  @Input()
+  observableFromChild$ = new Observable;
 
   // Sending observable to child
   
-  /*sendObservableToChild() {
+  sendObservableToChild() {
     this.observableToChild.next('Parent using observable');
-  } */
+  }
 
   // Receive obs from child
-  /* receiveObservableFromChild(event: any){
+  receiveObservableFromChild(event: any){
     event.subscribe((msg: any)=>{
       this.txt = msg;
     })
-  } */
+  }
 
 }

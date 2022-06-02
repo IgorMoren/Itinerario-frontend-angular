@@ -31,5 +31,4 @@ export class ComunicacionService {
     this._childMsgSource.next(value);
   }
 
-
 }
