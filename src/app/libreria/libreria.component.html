@@ -1,8 +1,11 @@
 <div class="libreria-container animate__animated animate__fadeIn">
   <div class="select-input">
     <select name="heroes" (change)="pintaGrafico($event)">
-      <option (value)="(item)" style = "font-family:Roboto"
-        *ngFor="let item of heroList">
+      <option
+        (value)="(item)"
+        style="font-family: Roboto"
+        *ngFor="let item of heroList"
+      >
         {{ item }}
       </option>
     </select>
