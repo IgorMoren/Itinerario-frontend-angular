@@ -120,22 +120,22 @@ code de la peticion Http */
       indexHeroCode = this.heroCode[indexHero];
     }
     this.libreriaService.getPeticionHttp(indexHeroCode).subscribe((heroes) => {
-      this.heroName = heroes['name'];
+      this.heroName = heroes[heroStats.hName];
       //console.log(this.heroName)
 
-      this.heroThwart = heroes['thwart'];
+      this.heroThwart = heroes[heroStats.hThwart];
       //console.log('Intervencion:', this.heroThwart);
 
-      this.heroAttack = heroes['attack'];
+      this.heroAttack = heroes[heroStats.hAttack];
       //console.log('Ataque:', this.heroAttack);
 
-      this.heroDef = heroes['defense'];
+      this.heroDef = heroes[heroStats.hDefense];
       //console.log('Def:', this.heroDef);
 
-      this.heroHand = heroes['hand_size'];
+      this.heroHand = heroes[heroStats.hHand_size];
       //console.log('Mano:', this.heroHand);
 
-      this.heroHp = heroes['health'];
+      this.heroHp = heroes[heroStats.hHealth];
       //console.log('health: ', this.heroHp);
 
       /*Se añade al final al valor del color obtenido de la api segun: https://www.esthersola.com/transparencia-color-hexadecimal/
