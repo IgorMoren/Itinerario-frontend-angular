@@ -96,11 +96,11 @@ export class LibreriaComponent implements OnInit {
 
       //console.log(this.heroCode);
 
-      this.pintaGrafico('01001a');
+      this.pintaGrafico();
     });
   }
 
-  pintaGrafico(event: any) {
+  pintaGrafico(event: any = '01001a') {
     /*Evento recoge con srcElement.value el valor del option.
 Saco el indice de este y lo establezco en el indice de los codigos para obtener el 
 code de la peticion Http */
