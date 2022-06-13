@@ -1,1 +1,8 @@
-<p>crud works!</p>
+<div class="crud-container animate__animated animate__fadeIn">
+  <div class="form-container">
+    <app-form #form></app-form>
+  </div>
+  <div class="table-container">
+    <app-table (emitter)="form.editValue($event)"></app-table>
+  </div>
+</div>

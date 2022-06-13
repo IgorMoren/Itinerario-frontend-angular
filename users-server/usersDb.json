@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "name": "Fernando",
+      "password": "1234",
+      "passwordConfirm": "1234",
+      "email": "fernando@test.com",
+      "subscribed": true,
+      "country": "Hong Kong",
+      "city": "Tegucigalpa",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Luisa",
+      "password": "1234",
+      "email": "luisa@test.com",
+      "subscribed": false,
+      "country": "Spain",
+      "city": "Teruel"
+    },
+    {
+      "name": "Paula",
+      "password": "1234",
+      "email": "paula@test.com",
+      "subscribed": false,
+      "country": "Albania",
+      "city": "Pamplona",
+      "id": 6
+    },
+    {
+      "name": "Igor",
+      "password": "1234",
+      "email": "moreno@gmail.com",
+      "subscribed": false,
+      "country": "American Samoa",
+      "city": "julio",
+      "id": 7
+    }
+  ]
+}

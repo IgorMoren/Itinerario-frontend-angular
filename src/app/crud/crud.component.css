@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=crud.component.css.map */
+.crud-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1fr;
+      grid-template-columns: 0.5fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.crud-container .form-container {
+  margin: 25px;
+  border-right: 1px #0000003D solid;
+}
+/*# sourceMappingURL=crud.component.css.map */

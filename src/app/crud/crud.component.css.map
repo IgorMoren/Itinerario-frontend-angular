@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,SAAS;EAChC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAK8B;;AAT9C,AAMI,eANW,CAMX,eAAe,CAAC;EACZ,MAAM,EAAE,IAAI;EAEZ,YAAY,EAAE,mBAAmB;CAAG",
     "sources": [
         "crud.component.sass"
     ],

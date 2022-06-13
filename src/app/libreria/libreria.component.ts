@@ -81,7 +81,7 @@ export class LibreriaComponent implements OnInit {
     this.libreriaService.getHeroList().subscribe((heroList) => {
       var heroLista: any;
       heroLista = Object.values(heroList);
-      console.log(heroLista);
+      //console.log(heroLista);
 
       for (let i = 0; i < heroLista.length; i++) {
         if (heroLista[i]['type_name'] === 'Hero') {

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,UAAU,EAAE,IAAI;EAChB,YAAY,EAAE,IAAI;EAClB,gBAAgB,EAAE,OAAkB;EACpC,KAAK,EAAE,IAAI;CAAG",
+    "sources": [
+        "table.component.sass"
+    ],
+    "names": [],
+    "file": "table.component.css"
+}

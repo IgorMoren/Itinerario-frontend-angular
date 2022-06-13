@@ -1,14 +1,15 @@
 <div class="child">
-    <h1>Child</h1>
+  <h1>Child</h1>
 
-    <p>Mensaje: {{ txt }}</p>
+  <p>Mensaje: {{ txt }}</p>
 
-    <div class="btn-container">
-
-        <button class="btn-comunication" (click)="sendToParentService()">Service</button>
-        <button class="btn-comunication" (click)="showOutput()">Output</button>
-        <button class="btn-comunication" >Observable</button>
-        <button class="btn-comunication" (click)="sendObservableToParent()">Observable</button>
-        
-    </div>
+  <div class="btn-container">
+    <button class="btn-comunication" (click)="sendToParentService()">
+      Service
+    </button>
+    <button class="btn-comunication" (click)="showOutput()">Output</button>
+    <button class="btn-comunication" (click)="sendObservableToParent()">
+      Observable
+    </button>
+  </div>
 </div>

@@ -1,0 +1,111 @@
+<form [formGroup]="myForm" (ngSubmit)="save()">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput type="text" autocomplete="off" formControlName="name" />
+    </mat-form-field>
+    <mat-error *ngIf="validValue('name')"
+      >El nombre debe tener al menos 3 caracteres</mat-error
+    >
+    <mat-error *ngIf="emptyInput('name')">
+      Este campo no puede estar vacio.</mat-error
+    >
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Contraseña</mat-label>
+      <input
+        autocomplete="off"
+        matInput
+        type="password"
+        formControlName="password"
+      />
+      <mat-error *ngIf="validValue('password')">
+        Contraseña no valida
+      </mat-error>
+      <mat-error *ngIf="emptyInput('password')">
+        Este campo no puede estar vacio.</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Confirmar contraseña</mat-label>
+      <input
+        autocomplete="off"
+        matInput
+        type="password"
+        formControlName="passwordConfirm"
+      />
+      <mat-error *ngIf="!passwordMatch()">
+        Las contraseñas deben coincidir
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Correo</mat-label>
+      <input
+        matInput
+        placeholder="correo electronico"
+        formControlName="email"
+        [pattern]="emailPattern"
+        [readonly]="readonlyController"
+      />
+      <mat-error *ngIf="validEmail()"
+        >La direccion de email no es valida</mat-error
+      >
+      <mat-error *ngIf="emptyInput('email')">
+        Este campo no puede estar vacio.</mat-error
+      >
+    </mat-form-field>
+  </p>
+
+  <mat-checkbox formControlName="subscribed"> Recibir ofertas </mat-checkbox>
+
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Pais</mat-label>
+      <mat-select formControlName="country">
+        <mat-option *ngFor="let item of countries" [value]="item.name.common">{{
+          item.name.common
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Ciudad</mat-label>
+      <input
+        autocomplete="off"
+        matInput
+        formControlName="city"
+        placeholder="ej. Madrid"
+      />
+      <mat-error *ngIf="validValue('city')"
+        >El nombre debe tener al menos 3 caracteres</mat-error
+      >
+      <mat-error *ngIf="emptyInput('city')">
+        Este campo no puede estar vacio.</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <button type="submit" mat-raised-button color="primary">Enviar</button>
+</form>
+<br />
+<br />
+<br />
+
+<!-- <div class="row">
+  <span style="color: white">Valid</span>
+  <pre style="color: white"> {{ myForm.valid }}</pre>
+
+  <span style="color: white">Pristine</span>
+  <pre style="color: white"> {{ myForm.pristine }}</pre>
+
+  <span style="color: white">Touched</span>
+  <pre style="color: white"> {{ myForm.touched }}</pre>
+
+  <span style="color: white">Value</span>
+  <pre style="color: white"> {{ myForm.value | json }}</pre>
+</div> -->
