@@ -1,7 +1,9 @@
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { Component, OnInit } from '@angular/core';
 import { LibreriaService } from './services/libreria.service';
 import { Heroes } from './interfaces/heroes';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+
+//TODO Tipico loading de los datos al cargar
 
 enum heroStats {
   hName = 'name',
@@ -38,9 +40,9 @@ export class LibreriaComponent implements OnInit {
   /* End chart values  */
 
   /* Array of heroes from marvelc cdb api */
-  heroList: Array<string> = ['Elige heroe:'];
+  heroList: string[] = ['Elige heroe:'];
   /* Array of heroes code from marvelc cdb api */
-  heroCode: Array<string> = ['0'];
+  heroCode: string[] = ['0'];
 
   heroListCode: any;
 
@@ -83,11 +85,11 @@ export class LibreriaComponent implements OnInit {
       heroLista = Object.values(heroList);
       //console.log(heroLista);
 
-      for (let i = 0; i < heroLista.length; i++) {
-        if (heroLista[i]['type_name'] === 'Hero') {
+      for (const hero of heroLista) {
+        if (hero['type_name'] === 'Hero') {
           //console.log(heroLista[i]);
-          this.heroList.push(heroLista[i]['name']);
-          this.heroCode.push(heroLista[i]['code']);
+          this.heroList.push(hero['name']);
+          this.heroCode.push(hero['code']);
         }
       }
       /* Jugar con los indices de un array y otro, coincidiran el 
@@ -100,6 +102,10 @@ export class LibreriaComponent implements OnInit {
     });
   }
 
+  /**
+   * Lo que sea
+   * @param event: string
+   */
   pintaGrafico(event: any = '01001a') {
     /*Evento recoge con srcElement.value el valor del option.
 Saco el indice de este y lo establezco en el indice de los codigos para obtener el 
@@ -111,7 +117,7 @@ code de la peticion Http */
 
     /*Condicion if para que al cargar el componente reciba ese valor y muestre, 
   asi se evita el display de elementos vacios*/
-    if (event == '01001a') {
+    if (event === '01001a') {
       indexHeroCode = '01001a';
     } else {
       indexHero = this.heroList.indexOf(event.srcElement.value);

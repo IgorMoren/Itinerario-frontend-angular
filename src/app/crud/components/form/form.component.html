@@ -1,4 +1,6 @@
 <form [formGroup]="myForm" (ngSubmit)="save()">
+  <!-- Name -->
+
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Nombre de usuario</mat-label>
@@ -7,10 +9,9 @@
     <mat-error *ngIf="validValue('name')"
       >El nombre debe tener al menos 3 caracteres</mat-error
     >
-    <mat-error *ngIf="emptyInput('name')">
-      Este campo no puede estar vacio.</mat-error
-    >
   </p>
+
+  <!-- Password -->
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Contraseña</mat-label>
@@ -21,13 +22,12 @@
         formControlName="password"
       />
       <mat-error *ngIf="validValue('password')">
-        Contraseña no valida
+        Contraseña muy corta
       </mat-error>
-      <mat-error *ngIf="emptyInput('password')">
-        Este campo no puede estar vacio.</mat-error
-      >
     </mat-form-field>
   </p>
+
+  <!-- Password confirm -->
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Confirmar contraseña</mat-label>
@@ -37,11 +37,13 @@
         type="password"
         formControlName="passwordConfirm"
       />
-      <mat-error *ngIf="!passwordMatch()">
+      <mat-error *ngIf="validValue('passwordConfirm')">
         Las contraseñas deben coincidir
       </mat-error>
     </mat-form-field>
   </p>
+
+  <!-- Email -->
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Correo</mat-label>
@@ -49,20 +51,15 @@
         matInput
         placeholder="correo electronico"
         formControlName="email"
-        [pattern]="emailPattern"
         [readonly]="readonlyController"
       />
-      <mat-error *ngIf="validEmail()"
-        >La direccion de email no es valida</mat-error
-      >
-      <mat-error *ngIf="emptyInput('email')">
-        Este campo no puede estar vacio.</mat-error
-      >
+      <mat-error *ngIf="validValue('email')">{{ emailErrorMsg }}</mat-error>
     </mat-form-field>
   </p>
 
+  <!-- Subscribed -->
   <mat-checkbox formControlName="subscribed"> Recibir ofertas </mat-checkbox>
-
+  <!-- Country -->
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Pais</mat-label>
@@ -73,6 +70,8 @@
       </mat-select>
     </mat-form-field>
   </p>
+
+  <!-- City -->
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Ciudad</mat-label>
@@ -85,9 +84,6 @@
       <mat-error *ngIf="validValue('city')"
         >El nombre debe tener al menos 3 caracteres</mat-error
       >
-      <mat-error *ngIf="emptyInput('city')">
-        Este campo no puede estar vacio.</mat-error
-      >
     </mat-form-field>
   </p>
   <button type="submit" mat-raised-button color="primary">Enviar</button>
@@ -96,16 +92,31 @@
 <br />
 <br />
 
-<!-- <div class="row">
-  <span style="color: white">Valid</span>
-  <pre style="color: white"> {{ myForm.valid }}</pre>
+<!-- <h5>Form errors</h5>
+<pre>{{ myForm.errors | json }}</pre>
 
-  <span style="color: white">Pristine</span>
-  <pre style="color: white"> {{ myForm.pristine }}</pre>
+<h5>Name</h5>
+<pre>{{ myForm.controls["name"].errors | json }}</pre>
 
-  <span style="color: white">Touched</span>
-  <pre style="color: white"> {{ myForm.touched }}</pre>
+<h5>Password</h5>
+<pre>{{ myForm.controls["password"].errors | json }}</pre>
 
-  <span style="color: white">Value</span>
-  <pre style="color: white"> {{ myForm.value | json }}</pre>
+<h5>Confirmar</h5>
+<pre>{{ myForm.controls["passwordConfirm"].errors | json }}</pre>
+
+<h5>Email</h5>
+<pre>{{ myForm.controls["email"].errors | json }}</pre>
+
+<div class="row">
+  <span style="color: red">Valid</span>
+  <pre style="color: red"> {{ myForm.valid }}</pre>
+
+  <span style="color: red">Pristine</span>
+  <pre style="color: red"> {{ myForm.pristine }}</pre>
+
+  <span style="color: red">Touched</span>
+  <pre style="color: red"> {{ myForm.touched }}</pre>
+
+  <span style="color: red">Value</span>
+  <pre style="color: red"> {{ myForm.value | json }}</pre>
 </div> -->

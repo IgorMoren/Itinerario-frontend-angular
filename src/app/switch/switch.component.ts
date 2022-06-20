@@ -3,20 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.sass']
+  styleUrls: ['./switch.component.sass'],
 })
 export class SwitchComponent {
-
   onOffController: boolean = false;
   onOff: string = 'Off';
   colorRed: boolean = false;
   colorYellow: boolean = false;
   colorGreen: boolean = false;
 
-  constructor() { }
+  beforeColor: string = '';
 
-  ngOnInit(): void {
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 
   lightOff() {
     this.colorRed = false;
@@ -26,24 +26,44 @@ export class SwitchComponent {
 
   setButtonColor() {
     this.lightOff();
-    if (this.onOffController == false) {
+    if (!this.onOffController) {
       this.onOffController = true;
-      this.onOff = 'On';   
+      this.onOff = 'On';
 
+      switch (this.beforeColor) {
+        case 'green':
+          this.colorGreen = true;
+          break;
+        case 'yellow':
+          this.colorYellow = true;
+          break;
+        case 'red':
+          this.colorRed = true;
+          break;
+        default:
+          this.lightOff();
+      }
+
+      console.log(this.beforeColor);
     } else {
+      console.log(this.beforeColor);
+
       this.onOffController = false;
-      this.onOff = 'Off';      
+      this.onOff = 'Off';
     }
   }
 
   showColor(event: any) {
     this.lightOff();
-    if (event.srcElement.value == 'green') {
+    if (event.srcElement.value === 'green') {
+      this.beforeColor = event.srcElement.value;
       this.colorGreen = true;
-    } else if (event.srcElement.value == 'yellow') {
+    } else if (event.srcElement.value === 'yellow') {
+      this.beforeColor = event.srcElement.value;
       this.colorYellow = true;
     } else {
+      this.beforeColor = event.srcElement.value;
       this.colorRed = true;
-    };
+    }
   }
 }

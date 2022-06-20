@@ -8,7 +8,7 @@ import { ComunicacionService } from './comunicacion.service';
   styleUrls: ['./comunicacion.component.sass'],
 })
 export class ComunicacionComponent implements OnInit {
-  observableToChild = new Subject();
+  observableToChild = new Subject<string>();
   observableFromChild!: string;
 
   /* Input-output */
@@ -50,7 +50,7 @@ export class ComunicacionComponent implements OnInit {
 
   /* Receive observable */
   @Input()
-  observableFromChild$ = new Observable();
+  observableFromChild$ = new Observable<string>();
 
   // Sending observable to child
 

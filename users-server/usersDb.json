@@ -1,41 +1,44 @@
 {
   "users": [
     {
-      "name": "Fernando",
+      "name": "Fernando herrer",
       "password": "1234",
       "passwordConfirm": "1234",
       "email": "fernando@test.com",
-      "subscribed": true,
-      "country": "Hong Kong",
+      "subscribed": false,
+      "country": "Iceland",
       "city": "Tegucigalpa",
       "id": 3
     },
     {
-      "id": 4,
       "name": "Luisa",
       "password": "1234",
+      "passwordConfirm": "1234",
       "email": "luisa@test.com",
       "subscribed": false,
       "country": "Spain",
-      "city": "Teruel"
+      "city": "Teruel",
+      "id": 4
     },
     {
       "name": "Paula",
       "password": "1234",
+      "passwordConfirm": "1234",
       "email": "paula@test.com",
-      "subscribed": false,
+      "subscribed": true,
       "country": "Albania",
       "city": "Pamplona",
       "id": 6
     },
     {
       "name": "Igor",
-      "password": "1234",
-      "email": "moreno@gmail.com",
-      "subscribed": false,
+      "password": "moreno",
+      "passwordConfirm": "moreno",
+      "email": "moreno@test.com",
+      "subscribed": true,
       "country": "American Samoa",
-      "city": "julio",
-      "id": 7
+      "city": "samoense",
+      "id": 8
     }
   ]
 }

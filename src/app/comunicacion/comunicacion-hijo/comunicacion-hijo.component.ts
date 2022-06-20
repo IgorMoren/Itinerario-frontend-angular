@@ -1,5 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ComunicacionService } from '../comunicacion.service';
 
 @Component({
@@ -7,9 +15,10 @@ import { ComunicacionService } from '../comunicacion.service';
   templateUrl: './comunicacion-hijo.component.html',
   styleUrls: ['./comunicacion-hijo.component.sass'],
 })
-export class ComunicacionHijoComponent implements OnInit {
-  outputToParent!: string;
+export class ComunicacionHijoComponent implements OnInit, OnDestroy {
+  outputToParent: string = '';
   observableToParent = new Subject();
+  alive$ = new Subject<boolean>();
 
   /* Comunication Input-Output */
   @Input()
@@ -30,12 +39,22 @@ export class ComunicacionHijoComponent implements OnInit {
     this._comunicacionService
       .getServiceChildMessage()
       .subscribe((msg: string) => {
+        console.log('Ei');
+
         this.txt = msg;
       });
-    this.observableFromParent$.subscribe((msg: any) => {
-      this.txt = msg;
-    });
+    this.observableFromParent$
+      .pipe(takeUntil(this.alive$))
+      .subscribe((msg: any) => {
+        this.txt = msg;
+      });
   }
+
+  ngOnDestroy(): void {
+    this.alive$.next(true);
+    this.alive$.complete();
+  }
+
   sendToParentService() {
     this._comunicacionService.setServiceParentMessage('Child using service');
   }

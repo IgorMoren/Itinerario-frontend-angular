@@ -30,8 +30,11 @@ export class TableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.obtainData();
+    //this.obtainData();
 
+    /* Angular View Updating Using Observables, Behavior Subject, and Event Emitters 
+  Unrelated Components: Observables + Behavior Subjects
+  https://medium.com/@tholaday777/angular-view-updating-using-observables-behavior-subject-and-event-emitters-acaf37500143 */
     this.communicationService.currentData.subscribe(() => {
       this.obtainData();
     });

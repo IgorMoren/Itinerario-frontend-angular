@@ -8,34 +8,30 @@ import { SwitchComponent } from './switch/switch.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: HomeComponent, 
-    pathMatch: 'full'
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
   },
   {
     path: 'comunicacion',
-    component: ComunicacionComponent
+    component: ComunicacionComponent,
   },
   {
-    path: 'switch', 
-    component: SwitchComponent
+    path: 'switch',
+    component: SwitchComponent,
   },
   {
-    path: 'crud', 
-    component: CrudComponent
+    path: 'crud',
+    component: CrudComponent,
   },
   {
-    path: 'libreria', 
-    component: LibreriaComponent
-  }
+    path: 'libreria',
+    component: LibreriaComponent,
+  },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

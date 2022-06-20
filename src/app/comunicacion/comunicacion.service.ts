@@ -2,18 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ComunicacionService {
-
-
   /* Como convenio uso de las variables privadas con _variable */
 
-  private _parentMsgSource = new BehaviorSubject('');
+  private _parentMsgSource = new BehaviorSubject<string>('');
 
-  private _childMsgSource = new BehaviorSubject('');
+  private _childMsgSource = new BehaviorSubject<string>('');
 
-  constructor() { }
+  constructor() {}
 
   getServiceParentMessage() {
     return this._parentMsgSource;
@@ -30,5 +28,4 @@ export class ComunicacionService {
   setServiceChildMessage(value: string) {
     this._childMsgSource.next(value);
   }
-
 }
